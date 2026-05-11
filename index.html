@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpha Reality Engine</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #0a0a0a;
+      color: #f2f2f2;
+      line-height: 1.55;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 88px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    section:first-of-type { border-top: none; }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.58);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow.centered {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 86px);
+      line-height: 0.95;
+      margin: 0 0 22px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: rgba(255,255,255,0.84);
+      max-width: 64ch;
+      text-wrap: pretty;
+    }
+
+    .center,
+    .steps,
+    .system-center,
+    .soft-center,
+    .final-center,
+    .perceptual-block {
+      text-align: center;
+    }
+
+    .center p,
+    .steps p,
+    .system-center p,
+    .soft-center p,
+    .final-center p,
+    .perceptual-block p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-top: none;
+    }
+
+    .hero-inner {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero-sub {
+      font-size: clamp(18px, 2.3vw, 28px);
+      margin-bottom: 18px;
+      color: #ffffff;
+    }
+
+    .hero-final {
+      margin-top: 26px;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    .hero p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 26px;
+      padding: 13px 18px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      border-color: rgba(255,255,255,0.32);
+      transform: translateY(-1px);
+    }
+
+    .core-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 20px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.015);
+      text-align: center;
+    }
+
+    .card p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .soft-panel {
+      background: rgba(255,255,255,0.02);
+    }
+
+    .steps p {
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .perceptual-title {
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: #f2f2f2;
+    }
+
+    .final-cta {
+      min-height: 68vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .footnote {
+      margin-top: 16px;
+      color: rgba(255,255,255,0.54);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      h1 {
+        font-size: clamp(54px, 14vw, 72px);
+        line-height: 0.85;
+      }
+
+      h2, .perceptual-title {
+        font-size: clamp(34px, 8vw, 40px);
+        line-height: 1.0;
+      }
+
+      .core-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="eyebrow centered">AI-powered</div>
+      <h1>Alpha Reality Engine</h1>
+      <div class="hero-sub">A reality engine rendered through language.</div>
+      <p>Persistent realities where people act for their own reasons, events unfold without scripts, and what happens can stay with you.</p>
+      <div class="hero-final">Define a state. Observe the response.</div>
+      <a class="button" href="A.R.E. Foundation v0.2.5 — BASE.md" download>Download Foundation v0.2.5</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container center">
+      <h2>Foundation v0.2.5 — BASE</h2>
+      <p>Built around causal consistency, environmental inertia, and autonomous world response.</p>
+      <p><strong>An instantiation grounded in physics — resistance, delay, and consequence.</strong></p>
+      <p>High-fidelity world response with minimal overhead.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container center">
+      <h2>No fixed setting.</h2>
+      <p>A city at midnight.<br />A ruined continent.<br />A war that never ended.<br />A future that should not exist.</p>
+      <p>The instance does not begin with a map.<br />It begins with a state.</p>
+      <p><strong>From there, reality takes form.</strong></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="eyebrow centered">Kernel</div>
+      <div class="core-grid">
+        <div class="card">
+          <h3>A reality that pushes back.</h3>
+          <p>Every action meets resistance. Doors stick. People hesitate. Noise carries.</p>
+          <p><strong>Nothing is free.</strong></p>
+        </div>
+        <div class="card">
+          <h3>Consequences stay.</h3>
+          <p>What happens now remains.</p>
+          <p>Not as a scripted callback — as residue.</p>
+        </div>
+        <div class="card">
+          <h3>Autonomous Agency.</h3>
+          <p>The world keeps moving whether you act or not.</p>
+          <p>Other people have their own momentum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container system-center">
+      <div class="eyebrow centered">System behavior</div>
+      <h2>Not scripted. Not random.</h2>
+      <p>No predetermined outcomes. No hidden correction. No outcomes designed to flatter the operator.</p>
+      <p>The world does not perform for you. It simply continues.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container perceptual-block">
+      <div class="eyebrow centered">Perceptually customizable</div>
+      <h2 class="perceptual-title">Shift pacing, compression, and narrative density at any point.</h2>
+    </div>
+  </section>
+
+  <section class="soft-panel">
+    <div class="container soft-center">
+      <div class="eyebrow centered">Modding</div>
+      <h2>Modding available.</h2>
+      <p>The Foundation build is distributed as a readable <code>.md</code> structure.</p>
+      <p>Its internal architecture may be modified, adapted, and extended for personal, experimental, and non-commercial use.</p>
+      <p>You can break it, rebuild it, and push it somewhere else.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container steps">
+      <h2>How to use</h2>
+      <p>Download the Foundation build.</p>
+      <p>Drop it into a blank conversation.</p>
+      <p>Run it.</p>
+      <p>Define an instance.</p>
+      <p>Enter.</p>
+    </div>
+  </section>
+
+<section class="final-cta" id="enter">
+    <div class="container final-center" style="display: flex; flex-direction: column; align-items: center; min-height: 45vh; justify-content: center;">
+      <h2>Enter the instance.</h2>
+      <a class="button" href="A.R.E. Foundation v0.2.5 — BASE.md" download>Download A.R.E. Foundation v0.2.5 — BASE</a>
+      <div class="footnote" style="margin-top: 32px; line-height: 1.8; text-align: center;">
+        <div style="margin-bottom: 8px;">Next Build: A.R.E. Foundation — CORE</div>
+        <div style="font-size: 13px;">
+          <span style="opacity: 0.8;">Official Hash:</span> 
+          <code style="font-family: monospace; background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px;">e4ad42cade817c5d7c6323159675c4125739637846835cae8437fb68eaa2a7ab</code>
+        </div>
+        <div style="font-size: 12px; margin-top: 20px; opacity: 0.9;">
+          If your AI does not support .md files, <a href="A.R.E. Foundation v0.2.5 — BASE.txt" download style="color: inherit; text-decoration: underline;">download the .txt file.</a>
+        </div>
+      </div>
+      <div style="margin-top: 60px; padding-bottom: 20px;">
+        <a href="https://sovereigntyconsortium.org" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 12px; letter-spacing: 0.05em;">
+          © 2026 Sovereignty Consortium. All rights reserved.
+        </a>
+      </div>  
+    </div>
+  </section>
+</body>
+</html>
